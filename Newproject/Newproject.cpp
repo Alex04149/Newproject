@@ -28,11 +28,11 @@ int main()
     SetConsoleOutputCP(1251);
     cout << "Привіт, це Олександр, розробник цієї програми, вона створена задля розрахунку рейтингового балу " << endl;
     cout << "Cпочатку потрібно заповнити залікову книжку, це не займе більше 2 хв.)" << endl;
-    int size;
+    int arrsize;
     cout << "Введіть кількість предметів: ";
-    cin >> size;
-    Zalik* Zalikovka = new Zalik[size];
-    for (int i = 0; i < size; i++) {
+    cin >> arrsize;
+    Zalik* Zalikovka = new Zalik[arrsize];
+    for (int i = 0; i < arrsize; i++) {
         cout << "Ведіть назву предмету ";
         cin >> Zalikovka[i].name;
         cout << "Ведіть коефіцієнт предмету ";
@@ -40,9 +40,9 @@ int main()
         cout << "Ведіть оцінку предмету ";
         cin >> Zalikovka[i].o;
     }
-    int* ko = new int[size];
+    int* ko = new int[arrsize];
     int sum_k = 0, sum_ko = 0;
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < arrsize; i++) {
         ko[i] = Zalikovka[i].k * Zalikovka[i].o;
         sum_k += Zalikovka[i].k;
         sum_ko += ko[i];
@@ -60,7 +60,7 @@ int main()
             cout << "Ваш рейтинговий бал " << rating << endl;
         }
         else {
-            PrintZalikovka(Zalikovka, size);
+            PrintZalikovka(Zalikovka, arrsize);
         }
         cout << endl << "Меню(1) Вийти(0)";
         cin >> check;
